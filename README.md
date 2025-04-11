@@ -1,110 +1,172 @@
-- French
-  -> Desc
-  -> Fonctionalités
-  -> Utilisation
-  -> Paramètres
-
-- English 
-  -> Desc
-  -> Functionality
-  -> Using
-  -> Parameters
-
--> exemple ouput
-
-
-#### FRENCH VERSION
-# LogAnalyzer Pro+ 🚀  
-**Analyse de logs haute performance avec filtres dynamiques**  
+# LogAnalyzer Pro++ 🚀  **Analyse de logs haute performance / High-performance log analysis**
 
 ---
 
-### 🔍 **Nouvelles Fonctionnalités**  
-- Choix du **type de log** (ERROR/WARNING/INFO/DEBUG) via CLI  
-- Détection **dynamique de motifs** personnalisables  
-- Support des **formats de logs variés** (Nginx, Apache, custom)  
+## 🇫🇷 Français <a name="fr"></a>
+
+**Navigation :** [Description](#desc-fr) | [Fonctionnalités](#features-fr) | [Utilisation](#use-fr) | [Paramètres](#params-fr) | [Exemples](#examples-fr) | [🇬🇧 English](#en)
 
 ---
 
-### 🛠️ **Utilisation**  
-```bash  
-python log_analyzer.py \  
-  --input /var/logs/app.log \  
-  --output rapport.json \  
-  --log-level ERROR  # ou WARNING/INFO/DEBUG  
-```
-Paramètres
-Option	Description	Valeurs Possibles
---input	Chemin du fichier de logs	Tout fichier texte
---output	Chemin du rapport JSON	.json
---log-level	Type de logs à analyser	ERROR, WARNING, INFO, DEBUG
+### 📦 **Description** <a name="desc-fr"></a>
 
-###################################################
----------------------------------------------------
-###################################################
+[↑ Retour au menu](#fr)
 
-#### ENGLISH VERSION
-# LogAnalyzer Pro+ 🚀  
-**High performance log analysis with dynamic filters**  
+Outil d'analyse de logs pour DevOps et ingénieurs data :
+
+-   🕵️ Détection intelligente d'erreurs
+-   📊 Export JSON structuré
+-   🚀 Optimisé pour fichiers >100GB
 
 ---
 
-### 🔍 **New Features** (ERROR/WARNING/DEBUG via CLIP)  
-- Choice of **log type** (ERROR/WARNING/INFO/DEBUG) via CLI  
-- Dynamic **pattern detection** (customisable)  
-- Support for various log formats** (Nginx, Apache, custom)  
+### 🛠️ **Fonctionnalités** <a name="features-fr"></a>
+
+[↑ Retour au menu](#fr) | [Exemples](#examples-fr)
+
+-   Comptage par code erreur/catégorie
+-   Récupération de 3 exemples de messages par type
+-   Filtrage dynamique (ERROR/WARNING/INFO/DEBUG)
 
 ---
 
-### 🛠️ **Use**  
-```bash 
-python log_analyzer.py  
-  --input /var/logs/app.log \  
-  --output rapport.json \  
-  --log-level ERROR # or WARNING/INFO/DEBUG  
-```
-Parameters
-Option Description Possible values
-```
---input Log file path Any text file
---output JSON .json report path
---log-level Type of log to analyse ERROR, WARNING, INFO, DEBUG
-```
+### 🚀 **Utilisation** <a name="use-fr"></a>
 
-🧩 Exemples d'Entrées Supportées / Examples entry accepted from log
+[↑ Retour au menu](#fr)
+
 ```bash
-# Format ERROR 
-[2023-10-05] ERROR: Database connection failed [CODE: 500]  
-```
-```bash
-# Format WARNING  
-WARNING 2023-10-05T14:22:01 User quota exceeded (user_id=123)  
-```
-```bash
-# Format INFO  
-INFO 2023-10-05 Server started on port 8080  
+python log_analyzer.py \\
+  --input /var/logs/app.log \\
+  --output rapport.json \\
+  --log-level ERROR
 ```
 
-EXEMPLES / EXAMPLES :
+---
+
+### ⚙️ **Paramètres** <a name="params-fr"></a>
+
+[↑ Retour au menu](#fr)
+
+| Option | Description | Valeurs |
+| :---------- | :-------------------------------- | :------------------------------- |
+| `--input` | Chemin du fichier de logs | Fichier `.log` ou `.txt` |
+| `--output` | Nom du fichier de sortie | Fichier `.json` |
+| `--log-level` | Niveau de log à analyser | `ERROR`, `WARNING`, `INFO`, `DEBUG` |
+
+---
+
+### 📝 **Exemple de Sortie** <a name="examples-fr"></a>
+
+[↑ Retour au menu](#fr)
+
 ```json
 {
   "log_level": "ERROR",
   "entries": {
     "404": {
-      "count": 3,
+      "count": 12,
       "examples": [
         "ERROR: File not found [CODE: 404]",
-        "ERROR: User profile missing [CODE: 404]"
+        "ERROR: User profile missing [CODE: 404]",
+        "ERROR: GET /nonexistent_page HTTP/1.1 [CODE: 404]"
       ]
     },
     "500": {
-      "count": 2,
+      "count": 5,
       "examples": [
-        "ERROR: Database connection failed [CODE: 500]"
+        "ERROR: Internal Server Error [CODE: 500]",
+        "ERROR: Database connection timeout [CODE: 500]",
+        "ERROR: Unhandled exception [CODE: 500]"
       ]
     }
   }
 }
 ```
 
-***"Un bon script ne se contente pas de compter - il raconte une histoire."* 📖💻**
+---
+
+## 🇬🇧 English <a name="en"></a>
+
+**Navigation:** [Description](#desc-en) | [Features](#features-en) | [Usage](#use-en) | [Parameters](#params-en) | [Output Example](#examples-en) | [🇫🇷 Français](#fr)
+
+---
+
+### 📦 **Description** <a name="desc-en"></a>
+
+[↑ Back to menu](#en)
+
+Log analysis tool for DevOps and data engineers:
+
+-   🕵️ Smart error detection
+-   📊 Structured JSON export
+-   🚀 Optimized for files >100GB
+
+---
+
+### 🛠️ **Features** <a name="features-en"></a>
+
+[↑ Back to menu](#en) | [Output Example](#examples-en)
+
+-   Error code/category counting
+-   3 message examples per type
+-   Dynamic filtering (ERROR/WARNING/INFO/DEBUG)
+
+---
+
+### 🚀 **Usage**<a name="use-en"></a>
+
+[↑ Back to menu](#en)
+
+```bash
+python log_analyzer.py \\
+  --input /var/logs/app.log \\
+  --output report.json \\
+  --log-level ERROR
+```
+
+---
+
+### ⚙️ **Parameters** <a name="params-en"></a>
+
+[↑ Back to menu](#en)
+
+| Option | Description | Values |
+| :---------- | :-------------------- | :------------------------------ |
+| `--input` | Log file path | `.log` or `.txt` file |
+| `--output` | Output file name | `.json` file |
+| `--log-level` | Log level to analyze | `ERROR`, `WARNING`, `INFO`, `DEBUG` |
+
+---
+
+### 📝 **Output Example** <a name="examples-en"></a>
+
+[↑ Back to menu](#en)
+
+```json
+{
+  "log_level": "ERROR",
+  "entries": {
+    "404": {
+      "count": 12,
+      "examples": [
+        "ERROR: File not found [CODE: 404]",
+        "ERROR: User profile missing [CODE: 404]",
+        "ERROR: GET /nonexistent_page HTTP/1.1 [CODE: 404]"
+      ]
+    },
+    "500": {
+      "count": 8,
+      "examples": [
+        "ERROR: Database connection failed [CODE: 500]",
+        "ERROR: Internal Server Error [CODE: 500]",
+        "ERROR: API endpoint unavailable [CODE: 500]"
+      ]
+    }
+  }
+}
+```
+
+---
+
+
+*"Un bon README est comme un panneau indicateur clair - il guide l'utilisateur sans confusion."* 🗺️
